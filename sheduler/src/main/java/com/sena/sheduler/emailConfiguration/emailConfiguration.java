@@ -9,13 +9,14 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 
 @Configuration
 public class emailConfiguration {
+	
 	@Bean
     JavaMailSender javaMailSender() {
 		JavaMailSenderImpl mailSender=new JavaMailSenderImpl();
 		mailSender.setHost("smtp.gmail.com");
 		mailSender.setPort(587);
-		mailSender.setUsername("martinez22cmc@gmail.com");
-		mailSender.setPassword("dchz hwrz dbwu semk");
+		mailSender.setUsername("mariajose24tuvooz@gmail.com");
+		mailSender.setPassword("fkps nrrk iiod dwns");
 		
 		Properties properties=mailSender.getJavaMailProperties();
 		properties.put("mail.smtp.auth", "true");

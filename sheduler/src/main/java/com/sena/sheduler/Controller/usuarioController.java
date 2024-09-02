@@ -39,7 +39,7 @@ public class usuarioController {
         } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Ocurrió un error al registrar el usuario");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al registrar el usuario");
         }
     }
 
@@ -92,8 +92,7 @@ public class usuarioController {
 			return new ResponseEntity<>(usuario,HttpStatus.OK);
 		}
 		else {
-			return new ResponseEntity<>("Error: usuario no encontrado",HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<>("Error usuario no encontrado",HttpStatus.BAD_REQUEST);
 		}
 	}
-
 }

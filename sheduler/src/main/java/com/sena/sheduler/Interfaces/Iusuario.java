@@ -23,6 +23,6 @@ public interface Iusuario extends CrudRepository<usuario, String> {
 		List<usuario>enviarNotificacionCambioContrasena();
 		
 		
-		@Query("SELECT u FROM usuario u WHERE DATEDIFF(CURRENT_DATE,u.fechaUltimoInicioSesion) >= 30")
+		@Query("SELECT u FROM usuario u WHERE DATEDIFF(CURRENT_DATE, u.fechaUltimoInicioSesion) >= 90")
 	    List<usuario>enviarRecordatorioSesion();
 }
