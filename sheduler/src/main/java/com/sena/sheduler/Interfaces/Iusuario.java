@@ -13,16 +13,19 @@ public interface Iusuario extends CrudRepository<usuario, String> {
 
 	@Query("SELECT u FROM usuario u WHERE "
 			+ "u.numeroDocumento LIKE %?1% OR "
-			+ "u.correo LIKE %?1%")
+			+ "u.correo LIKE %?1%" )
 		List<usuario>filtroUsuario(String filtro);
 		
-		@Query("SELECT u FROM usuario u WHERE DATEDIFF(CURRENT_DATE, u.fechaNacimiento) >= 6570 AND u.tipoDocumento = 'TI'")
+		@Query("SELECT u FROM usuario u WHERE DATEDIFF(CURRENT_DATE, u.fechaNacimiento) >= 6570"
+				+"AND u.tipoDocumento = 'TI' AND u.estado ='Activo'")
 		List<usuario>enviarRecordatorioActualizacion();
 		
-		@Query("SELECT u FROM usuario u WHERE DATEDIFF(CURRENT_DATE, u.fechaUltimaActualizacionContrasena) >= 90")
+		@Query("SELECT u FROM usuario u WHERE DATEDIFF(CURRENT_DATE, u.fechaUltimaActualizacionContrasena) >= 90"
+				+"AND u.estado = 'Activo'")
 		List<usuario>enviarNotificacionCambioContrasena();
 		
 		
-		@Query("SELECT u FROM usuario u WHERE DATEDIFF(CURRENT_DATE, u.fechaUltimoInicioSesion) >= 90")
+		@Query("SELECT u FROM usuario u WHERE DATEDIFF(CURRENT_DATE, u.fechaUltimoInicioSesion) >= 90"
+				+"AND u.estado = 'Activo'")
 	    List<usuario>enviarRecordatorioSesion();
 }

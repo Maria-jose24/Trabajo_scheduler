@@ -38,15 +38,17 @@ public class usuario {
 
     @Column(name = "correo", nullable = false, length = 100, unique = true)
     private String correo;
-
+    
+    @Column(name = "notificado", nullable = true, length = 40)
+    private Date notificado;
 
 	public usuario() {
 		super();
 	}
 
-	public usuario(String id, String tipoDocumento, String numeroDocumento, Date fechaNacimiento,
-			String contrasena, Date fechaUltimaActualizacionContrasena, Date fechaUltimoInicioSesion,
-			String estado, String correo, boolean notificado) {
+	public usuario(String id, String tipoDocumento, String numeroDocumento, Date fechaNacimiento, String contrasena,
+			Date fechaUltimaActualizacionContrasena, Date fechaUltimoInicioSesion, String estado, String correo,
+			Date notificado) {
 		super();
 		this.id = id;
 		this.tipoDocumento = tipoDocumento;
@@ -57,6 +59,7 @@ public class usuario {
 		this.fechaUltimoInicioSesion = fechaUltimoInicioSesion;
 		this.estado = estado;
 		this.correo = correo;
+		this.notificado = notificado;
 	}
 
 	public String getId() {
@@ -130,5 +133,13 @@ public class usuario {
 	public void setCorreo(String correo) {
 		this.correo = correo;
 	}
-    
+
+	public Date getNotificado() {
+		return notificado;
+	}
+
+	public void setNotificado(Date notificado) {
+		this.notificado = notificado;
+	}
 }
+	

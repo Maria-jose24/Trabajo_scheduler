@@ -11,8 +11,10 @@ public interface IusuarioService {
 	public List<usuario>findAll();
 	public Optional<usuario>findById(String id);
 	public int delete(String id);
+	
 	List<usuario>filtroUsuario(String filtro);
 	List<usuario>enviarRecordatorioActualizacion();
 	List<usuario>enviarNotificacionCambioContrasena();
 	List<usuario>enviarRecordatorioSesion( );
+
 }
